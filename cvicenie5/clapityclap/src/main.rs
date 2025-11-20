@@ -1,4 +1,3 @@
-
 use std::
     path::PathBuf
 ;
@@ -10,7 +9,6 @@ use app_config::{AppConfig, Commands};
 
 mod app_config;
 mod console_reader;
-
 fn main() {
     // spustim aplikaciu s prikazom print-tasks - aplikacia nacita tasky z json suboru a vypise ich
     // spustim aplikaciu s prikazom add-task - aplikacia nacita udaje pre novy task od pouzivatela
@@ -49,8 +47,8 @@ fn main() {
         Commands::RemoveTaskById { task_id } => {
             control::remove_task_by_id(&args.path.unwrap(), task_id)
         }
-        Commands::Interactive => 
-    };
+        Commands::Interactive => control::interactive(),
+
 
     // let mut tm = TaskManager::new();
     // tm.read_from_txt_file(Path::new("./tasky.txt"));
@@ -64,4 +62,3 @@ fn main() {
     // let new_task_manager: TaskManager = serde_json::from_str(&serialized_json).unwrap();
     // println!("{new_task_manager:?}");
 }
-

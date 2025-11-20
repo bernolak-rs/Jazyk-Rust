@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "clapityclap",
+    "ratatask",
+    "task_library",
+]
+resolver = "3"

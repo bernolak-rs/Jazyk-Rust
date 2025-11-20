@@ -1,0 +1,106 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "nazov": "Vytvoriť login stránku",
+      "popis": "Implementovať prihlasovaciu obrazovku s validáciou vstupov.",
+      "priorita": 2,
+      "planovany_zaciatok": "2025-02-11",
+      "skutocny_zaciatok": "2025-02-11",
+      "planovane_trvanie": [86400, 0],
+      "skutocne_trvanie": [86400, 0]
+    },
+    {
+      "id": 2,
+      "nazov": "Napísať API endpoint pre úlohy",
+      "popis": "REST endpoint s podporou GET/POST/PUT/DELETE.",
+      "priorita": 1,
+      "planovany_zaciatok": "2025-02-13",
+      "skutocny_zaciatok": "2025-02-13",
+      "planovane_trvanie": [86400, 0],
+      "skutocne_trvanie": [86400, 0]
+    },
+    {
+      "id": 3,
+      "nazov": "Pridať Ganttov diagram",
+      "popis": "Vykreslenie časovej osy s úlohami.",
+      "priorita": 3,
+      "planovany_zaciatok": "2025-02-14",
+      "skutocny_zaciatok": "2025-02-14",
+      "planovane_trvanie": [86400, 0],
+      "skutocne_trvanie": [86400, 0]
+    },
+    {
+      "id": 4,
+      "nazov": "Implementovať registráciu užívateľov",
+      "popis": "Formulár, validácia e-mailu, hashovanie hesla.",
+      "priorita": 2,
+      "planovany_zaciatok": "2025-02-16",
+      "skutocny_zaciatok": "2025-02-16",
+      "planovane_trvanie": [172800, 0],
+      "skutocne_trvanie": [172800, 0]
+    },
+    {
+      "id": 5,
+      "nazov": "Navrhnúť databázový model",
+      "popis": "ER diagram, tabuľky, relácie, indexy.",
+      "priorita": 1,
+      "planovany_zaciatok": "2025-02-20",
+      "skutocny_zaciatok": "2025-02-20",
+      "planovane_trvanie": [259200, 0],
+      "skutocne_trvanie": [259200, 0]
+    },
+    {
+      "id": 6,
+      "nazov": "Frontend layout aplikácie",
+      "popis": "Grid layout, základný dizajn pre desktop a mobil.",
+      "priorita": 2,
+      "planovany_zaciatok": "2025-02-25",
+      "skutocny_zaciatok": "2025-02-25",
+      "planovane_trvanie": [86400, 0],
+      "skutocne_trvanie": [86400, 0]
+    },
+    {
+      "id": 7,
+      "nazov": "Notifikácie e-mailom",
+      "popis": "Odosielanie správ pri zmene stavu úlohy.",
+      "priorita": 1,
+      "planovany_zaciatok": "2025-02-27",
+      "skutocny_zaciatok": "2025-02-27",
+      "planovane_trvanie": [172800, 0],
+      "skutocne_trvanie": [172800, 0]
+    },
+    {
+      "id": 8,
+      "nazov": "Exportovať dáta do CSV",
+      "popis": "Export všetkých úloh do CSV formátu so správnym kódovaním.",
+      "priorita": 2,
+      "planovany_zaciatok": "2025-03-02",
+      "skutocny_zaciatok": "2025-03-02",
+      "planovane_trvanie": [86400, 0],
+      "skutocne_trvanie": [86400, 0]
+    },
+    {
+      "id": 9,
+      "nazov": "Implementovať vyhľadávanie",
+      "popis": "Vyhľadávanie úloh podľa názvu, dátumu a priority.",
+      "priorita": 1,
+      "planovany_zaciatok": "2025-03-05",
+      "skutocny_zaciatok": "2025-03-05",
+      "planovane_trvanie": [172800, 0],
+      "skutocne_trvanie": [172800, 0]
+    },
+    {
+      "id": 10,
+      "nazov": "Pridať dark/light režimy aplikácie",
+      "popis": "Prepnuteľné témy a dynamické farby.",
+      "priorita": 2,
+      "planovany_zaciatok": "2025-03-10",
+      "skutocny_zaciatok": "2025-03-10",
+      "planovane_trvanie": [259200, 0],
+      "skutocne_trvanie": [259200, 0]
+    }
+  ]
+}
+
+

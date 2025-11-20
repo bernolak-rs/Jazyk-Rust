@@ -64,3 +64,20 @@ pub fn remove_task_by_id(path: &PathBuf, task_id: i32) {
     tm.remove_task(task_id);
     serialize_json(path, &tm);
 }
+
+fn print_options() {
+    println!(
+        "Select option <1-4>:\n\t
+        1. Print tasks\n\t
+        2. Show task by id\n\t
+        3. Add task\n\t
+        4. Remove task\n\t
+        q for quit\n"
+    );
+}
+
+pub fn interactive_mode() {
+    let input = String::new();
+
+    while input != "q" {}
+}
