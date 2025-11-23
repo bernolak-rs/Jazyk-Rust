@@ -2,6 +2,7 @@ use std::{fs::File, path::PathBuf};
 
 use crate::task::{ReadTaskFromUser, Task, TaskManager};
 
+pub mod db;
 pub mod managed;
 
 pub fn deserialize_json(path: &PathBuf) -> TaskManager {

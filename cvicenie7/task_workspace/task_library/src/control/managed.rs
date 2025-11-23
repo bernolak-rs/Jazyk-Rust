@@ -14,8 +14,8 @@ pub fn show_task_by_id(tm: &TaskManager, task_id: usize) {
     }
 }
 
-pub fn add_task(tm: &mut TaskManager, reader: &impl ReadTaskFromUser) {
-    let task = Task {
+pub fn create_task(reader: &impl ReadTaskFromUser) -> Task {
+    Task {
         id: reader.read_id("Zadaj ID tasku: "),
         nazov: reader.read_nazov("Zadaj nazov tasku: "),
         popis: reader.read_popis("Zadaj popis tasku: "),
@@ -24,8 +24,11 @@ pub fn add_task(tm: &mut TaskManager, reader: &impl ReadTaskFromUser) {
         skutocny_zaciatok: reader.read_skutocny_zaciatok("Zadaj skutocny zaciatok: "),
         planovane_trvanie: reader.read_planovane_trvanie("Zadaj planovane trvanie: "),
         skutocne_trvanie: reader.read_skutocne_trvanie("Zadaj skutocne trvanie: "),
-    };
-    tm.add_task(task);
+    }
+}
+
+pub fn add_task(tm: &mut TaskManager, reader: &impl ReadTaskFromUser) {
+    tm.add_task(create_task(reader));
 }
 
 pub fn remove_task_by_id(tm: &mut TaskManager, task_id: usize) {
@@ -35,4 +38,3 @@ pub fn remove_task_by_id(tm: &mut TaskManager, task_id: usize) {
         None => println!("Task s ID {} nebol najdeny", task_id),
     };
 }
-

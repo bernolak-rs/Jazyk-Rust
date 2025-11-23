@@ -42,13 +42,27 @@ fn main() {
     // pri nepovinnych atributoch, tak tieto sa nastavia na hodnotu None
 
     match args.command {
-        Commands::ListTasks => control::list_tasks(&args.path.unwrap()),
-        Commands::ShowTaskById { task_id } => {
-            control::show_task_by_id(&args.path.unwrap(), task_id)
+        Commands::ListTasks => {
+            //control::list_tasks(&args.path.unwrap());
+            let tm = control::db::create_from_db();
+            tm.print_all_tasks();
         }
-        Commands::AddTask => control::add_task(&args.path.unwrap(), &ConsoleReader),
+        Commands::ShowTaskById { task_id } => {
+            //control::show_task_by_id(&args.path.unwrap(), task_id)
+            control::db::show_task_by_id(task_id)
+        }
+        Commands::AddTask => {
+            //control::add_task(&args.path.unwrap(), &ConsoleReader),
+            control::db::add_task(&ConsoleReader);
+        }
         Commands::RemoveTaskById { task_id } => {
-            control::remove_task_by_id(&args.path.unwrap(), task_id)
+            //control::remove_task_by_id(&args.path.unwrap(), task_id)
+            let deleted = control::db::remove_task_by_id(task_id);
+            if deleted {
+                println!("Task removed")
+            } else {
+                println!("Task either not found or something went wrong");
+            }
         }
         Commands::RunInteractive => run_in_interactive_mode(&args.path.unwrap(), ConsoleReader),
     };
