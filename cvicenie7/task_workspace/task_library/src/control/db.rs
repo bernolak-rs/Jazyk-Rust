@@ -39,7 +39,7 @@ pub fn remove_task_by_id(task_id: usize) -> bool {
     deleted > 0
 }
 
-pub fn show_task_by_id(task_id: usize) {
+pub fn show_task_by_id(task_id: usize) -> Task {
     use crate::schema::tasks::dsl::{id, tasks};
     use diesel::prelude::*;
 
@@ -52,6 +52,5 @@ pub fn show_task_by_id(task_id: usize) {
         .expect("Failed to load task")
         .expect("Failed to load task");
 
-    let task: Task = (&task).into();
-    println!("{}", task.get_print_string());
+    (&task).into()
 }

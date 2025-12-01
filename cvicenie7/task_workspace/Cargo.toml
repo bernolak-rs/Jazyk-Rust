@@ -2,6 +2,6 @@
 members = [
     "clapity_clap",
     "ratatask",
-    "task_library", "task_web",
+    "task_library", "task_web", "yew_frontend",
 ]
 resolver = "3"

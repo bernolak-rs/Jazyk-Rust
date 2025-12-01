@@ -10,3 +10,4 @@ serde_json = "1.0.145"
 utoipa = { version = "5.4.0", features = ["actix_extras", "chrono"] }
 utoipa-swagger-ui = { version = "9.0.2", features=["actix-web"] }
 task_library = { path = "../task_library" }
+chrono = "0.4.42"

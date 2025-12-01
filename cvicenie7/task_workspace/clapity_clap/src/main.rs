@@ -49,7 +49,10 @@ fn main() {
         }
         Commands::ShowTaskById { task_id } => {
             //control::show_task_by_id(&args.path.unwrap(), task_id)
-            control::db::show_task_by_id(task_id)
+            println!(
+                "{}",
+                control::db::show_task_by_id(task_id).get_print_string()
+            )
         }
         Commands::AddTask => {
             //control::add_task(&args.path.unwrap(), &ConsoleReader),
