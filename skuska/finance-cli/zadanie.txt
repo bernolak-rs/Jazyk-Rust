@@ -1,0 +1,25 @@
+Zadanie na precvičenie: Finance-CLI
+
+Vytvor aplikáciu, ktorá bude spĺňať tieto body:
+
+    Dátový model: Vytvor štruktúru Transaction, ktorá bude mať id, amount (f64), category (String), description (String) a date (Chrono DateTime).
+
+    CLI Príkazy (clap):
+
+        add --amount <hodnota> --category <kategoria> [--desc <popis>] - pridá transakciu. Dátum sa nastaví na aktuálny čas.
+
+        list - vypíše všetky transakcie v prehľadnej tabuľke (alebo len pod sebou).
+
+        stats - vypíše súčet výdavkov podľa kategórií.
+
+    Persistence (serde + serde_json):
+
+        Pri každom spustení sa dáta načítajú zo súboru history.json.
+
+        Po pridaní novej transakcie sa zoznam okamžite uloží späť do súboru.
+
+    Práca s časom (chrono):
+
+        Pri príkaze list formátuj dátum do čitateľnej podoby (napr. 16.01.2024 14:30).
+
+Tento projekt ťa naučí pracovať s chybami (Result), vlastnením dát (Ownership) pri parsovaní a hlavne efektívne prepojiť externé knižnice. Ak narazíš na problém, pýtaj sa! Držím palce pri trénovaní.

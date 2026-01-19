@@ -1,15 +1,12 @@
-use std::sync::Mutex;
-
 use actix_cors::Cors;
 use actix_files::Files;
 use actix_web::{App, HttpResponse, HttpServer, Responder, ResponseError, delete, get, put, web};
 use chrono::{NaiveDate, TimeDelta};
 use serde::{Deserialize, Serialize};
 use task_library::control;
+use task_library::control::db::create_from_db;
 use task_library::task::ReadTaskFromUser;
-use task_library::{models::TaskDb, task::TaskManager};
-use utoipa::openapi::security::Http;
-use utoipa::{OpenApi, openapi};
+use utoipa::OpenApi;
 use utoipa_swagger_ui::SwaggerUi;
 
 #[derive(OpenApi)]
@@ -41,7 +38,7 @@ async fn hello() -> impl Responder {
 #[utoipa::path]
 #[get("/get_tasks")]
 async fn get_tasks() -> impl Responder {
-    let result = web::block(|| control::db::create_from_db()).await;
+    let result = web::block(create_from_db).await;
 
     match result {
         Ok(manager) => HttpResponse::Ok().json(manager.get_tasks()),
