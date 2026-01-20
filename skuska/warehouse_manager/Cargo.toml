@@ -1,0 +1,10 @@
+[package]
+name = "warehouse_manager"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+chrono = { version = "0.4.43", features = ["serde"] }
+serde = { version = "1.0.228", features = ["derive"] }
+serde_json = { version = "1.0.149" }
+clap = { version = "4.5.54", features = ["derive"] }

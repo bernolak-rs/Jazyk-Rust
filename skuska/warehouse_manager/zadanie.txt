@@ -1,0 +1,35 @@
+Vytvor CLI aplikáciu na evidenciu tovaru v sklade.
+
+    Dátový model (struct Product):
+
+        id: unikátne číslo (môžeš použiť usize).
+
+        name: názov tovaru.
+
+        quantity: počet kusov na sklade (u32).
+
+        price: cena za kus.
+
+        last_restock: dátum posledného naskladnenia (DateTime<Local>).
+
+    CLI Príkazy (clap):
+
+        add <NAME> --price <PRICE>: Pridá nový produkt s nulovým množstvom.
+
+        restock <ID> <QUANTITY>: Zvýši množstvo existujúceho produktu a aktualizuje last_restock na aktuálny čas.
+
+        inventory: Vypíše tabuľku všetkých produktov.
+
+        export: Uloží aktuálny stav do súboru inventory.json (cez serde).
+
+Tvoj logický postup pri príkaze restock:
+
+    Načítať zoznam produktov z JSON súboru.
+
+    Nájsť v tom zozname produkt s konkrétnym id (použi .iter_mut()).
+
+    Ak sa nájde, zmeniť jeho quantity a last_restock.
+
+    Ak sa nenájde, vypísať chybu: "Produkt s týmto ID neexistuje."
+
+    Uložiť celý zoznam späť do súboru.

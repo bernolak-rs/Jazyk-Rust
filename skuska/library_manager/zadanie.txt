@@ -1,0 +1,28 @@
+Vytvor CLI aplikáciu na správu kníh v domácej knižnici.
+1. Dátový model (struct Book)
+
+    id: usize
+
+    title: String
+
+    author: String
+
+    year: i32
+
+    is_borrowed: bool
+
+    borrowed_at: Option<DateTime<Local>> (Použi Option, pretože kniha nemusí byť požičaná).
+
+2. CLI Príkazy (clap)
+
+    add <TITLE> <AUTHOR> --year <YEAR>: Pridá novú knihu.
+
+    borrow <ID>: Označí knihu ako požičanú a nastaví borrowed_at na aktuálny čas.
+
+        Validácia: Ak je kniha už požičaná, vypíš varovanie a nič nemeň.
+
+    return <ID>: Označí knihu ako vrátenú (is_borrowed = false, borrowed_at = None).
+
+    list [--borrowed]: Vypíše zoznam kníh.
+
+        Ak sa pridá voliteľný prepínač --borrowed, vypíš iba tie knihy, ktoré sú momentálne niekomu požičané.
