@@ -1,0 +1,95 @@
+Jazyk Rust – Skúška (20.01.2026)
+Téma: Knižnica
+
+Cieľom je implementovať aplikáciu na správu kníh s nasledovnými funkcionalitami:
+
+    Pridávanie kníh,
+
+    Odstraňovanie kníh,
+
+    Vyhľadávanie kníh podľa rôznych kritérií,
+
+    Vypisovanie vybraných štatistík o knihách,
+
+    Načítavanie a ukladanie do súboru vo formáte JSON.
+
+Informácie o knihách
+
+O jednotlivých knihách je potrebné uchovávať nasledovné informácie:
+
+    Autori (jedna kniha môže mať viacerých autorov),
+
+    Názov,
+
+    Vydavateľstvo,
+
+    Žáner,
+
+    Počet strán,
+
+    ISBN,
+
+    Rok vydania,
+
+    Informácia o tom, či je požičaná,
+
+    Stav knihy.
+
+Povolené materiály a odporúčané knižnice
+
+    Knižnica clap s funkciami derive (cargo add clap --features derive),
+
+    Knižnica serde s funkciami derive (cargo add serde --features derive),
+
+    Offline dokumentácia štandardnej knižnice (rustup doc --std),
+
+    Offline dokumentácia použitých knižníc (cargo doc --open).
+
+Popis jednotlivých prvkov (lib.rs)
+
+Všetky nasledovné prvky implementujte ako verejné členy v súbore lib.rs.
+1. Enum: Stav
+
+    Názov: Stav
+
+    Požadované traity: Default, Display, serde::Serialize, serde::Deserialize, PartialEq
+
+    Hodnoty: Nova, Pouzivana, Poskodena, Vyradena
+
+    Funkcia default: vráti hodnotu Nova.
+
+2. Štruktúra: Kniha
+
+    Názov: Kniha
+
+    Požadované traity: Default, Display, serde::Serialize, serde::Deserialize
+
+3. Štruktúra: Kniznica
+
+    Názov: Kniznica
+
+    Požadované traity: Default, serde::Serialize, serde::Deserialize
+
+Požadované metody a funkcie
+Funkcia / Metóda,Parametre,Návratová hodnota,Popis
+Kniznica::nacitaj_zo_suboru,&PathBuf,Option<Kniznica>,"Pokúsi sa otvoriť JSON súbor a deserializovať ho. Ak súbor neexistuje alebo zlyhá dekódovanie, vráti None."
+kniznica.uloz_do_suboru,&PathBuf,bool,"Serializuje knižnicu do JSON súboru. Vráti true pri úspechu, inak false."
+kniznica.pridaj_knihu,Kniha,"Result<(), ()>","Pridá knihu, ak sa v knižnici ešte nenachádza kniha s rovnakým ISBN."
+kniznica.odstran_knihu,&str (isbn),"Result<Kniha, ()>",Odstráni knihu podľa ISBN a vráti ju.
+kniznica.daj_knihu_podla_isbn,&str (isbn),Option<&Kniha>,Vyhľadá knihu podľa ISBN.
+kniznica.daj_knihy_autora,&str (autor),Vec<&Kniha>,Vráti zoznam všetkých kníh daného autora.
+kniznica.daj_knihy_podla_stavu,Stav,Vec<&Kniha>,Vráti zoznam kníh s daným stavom.
+kniznica.vypis_vydavatelstva_a_pocet_knih,-,-,"Vypíše štatistiku: ""Názov vydavateľstva: počet kníh""."
+kniznica.vypis_knihy_daneho_zanru,&str (žáner),-,Vypíše informácie o všetkých knihách daného žánru (použite fmt knihy).
+
+Ovládanie aplikácie (main.rs)
+
+Implementujte pomocou knižnice clap s týmito príkazmi:
+
+    daj-knihu-isbn: (2 argumenty: cesta k súboru, isbn) – Vyhľadá a vypíše knihu.
+
+    daj-knihy-autora: (2 argumenty: cesta k súboru, autor) – Vyhľadá a vypíše knihy autora.
+
+    odstran-knihu: (2 argumenty: cesta k súboru, isbn) – Odstráni knihu a uloží aktualizovanú knižnicu.
+
+    vypis-vydavatelstva: (1 argument: cesta k súboru) – Vypíše štatistiky vydavateľstiev.

@@ -1,0 +1,26 @@
+{
+  "knihy": [
+    {
+      "autori": ["J.R.R. Tolkien"],
+      "nazov": "Hobit",
+      "vydavatelstvo": "Slovart",
+      "zaner": "Fantasy",
+      "pocet_stran": 300,
+      "isbn": "111-222",
+      "rok_vydania": 1937,
+      "je_pozicana": false,
+      "stav": "Nova"
+    },
+    {
+      "autori": ["Andrzej Sapkowski"],
+      "nazov": "Zaklinac",
+      "vydavatelstvo": "Plus",
+      "zaner": "Fantasy",
+      "pocet_stran": 320,
+      "isbn": "333-444",
+      "rok_vydania": 1993,
+      "je_pozicana": true,
+      "stav": "Pouzivana"
+    }
+  ]
+}
